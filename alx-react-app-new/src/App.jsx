@@ -1,3 +1,4 @@
+import Counter from './components/Counter'
 import WelcomeMessage from './components/WelcomeMessage'
 import Header from './components/Header'
 import MainContent from './components/MainContent'
@@ -25,6 +26,10 @@ function App() {
         age="25"
         bio="Loves hiking and photography"
       />
+    </div>
+    <div>
+      <h1>Counter App</h1>
+      <Counter />
     </div>
     </>
   )
