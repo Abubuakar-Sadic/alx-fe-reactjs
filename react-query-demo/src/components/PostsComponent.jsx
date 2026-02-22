@@ -15,20 +15,21 @@ const fetchPosts = async () => {
 function PostsComponent() {
   const {
     data,
-    error,
     isLoading,
+    isError,
+    error,
     isFetching,
     refetch,
   } = useQuery("posts", fetchPosts, {
-    staleTime: 1000 * 60, // 1 minute caching
+    staleTime: 1000 * 60,
   });
 
   if (isLoading) {
     return <p>Loading posts...</p>;
   }
 
-  if (error) {
-    return <p>Error loading posts.</p>;
+  if (isError) {
+    return <p>Error: {error.message}</p>;
   }
 
   return (
@@ -54,3 +55,4 @@ function PostsComponent() {
 }
 
 export default PostsComponent;
+
